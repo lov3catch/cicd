@@ -37,3 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "❌ Tests failed! Check the logs for details."
+  
+  Notify-Always:
+    needs: Code-Test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "OK! Tests ran. Check the logs for details."
