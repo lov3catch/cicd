@@ -31,4 +31,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "Deploying to production/stage server"
-
+  Notify-Failure:
+    needs: Code-Test
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "❌ Tests failed! Check the logs for details."
