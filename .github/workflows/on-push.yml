@@ -1,4 +1,4 @@
-name: Running on push
+name: Push hello world
 
 on: push
 
